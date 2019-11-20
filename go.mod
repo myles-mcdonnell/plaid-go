@@ -1,4 +1,4 @@
-module github.com/myles-mcdonnell/plaid-go
+module github.com/myles-mcdonnellplaid-go
 
 go 1.13
 

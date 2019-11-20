@@ -8,12 +8,15 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
-
-	"github.com/plaid/plaid-go/internal"
 )
 
-// APIVersion holds the latest version of the Plaid API
-const APIVersion = "2019-05-29"
+
+const (
+	// APIVersion holds the latest version of the Plaid API
+	APIVersion = "2019-05-29"
+
+	ClientVersion = "2.0.1"
+)
 
 // Client holds information required to interact with the Plaid API.
 // Note: Client is only exported for method documentation purposes.
@@ -76,7 +79,7 @@ func (c *Client) newRequest(endpoint string, body io.Reader, v interface{}) (*ht
 	}
 
 	req.Header.Add("Content-Type", "application/json")
-	req.Header.Add("User-Agent", "Plaid Go v"+internal.Version)
+	req.Header.Add("User-Agent", "Plaid Go v"+ClientVersion)
 
 	// Add header for Plaid API version
 	req.Header.Add("Plaid-Version", APIVersion)
